@@ -96,8 +96,6 @@ footer { text-align:center; padding:20px; background:#eee; margin-top:40px; }
     <h1>Алма Сарсенбаева — специалист по био‑массажу Fohow</h1>
     <p>Био‑массаж восстанавливает энергию, снимает напряжение и улучшает самочувствие. Подходит людям любого возраста.</p>
     <div class="buttons">
-      <a class="whatsapp-btn" href="https://wa.me/77003338541" target="_blank">📩 WhatsApp</a>
-      <a class="instagram-btn" href="https://instagram.com/alma.fohow" target="_blank">📸 Instagram</a>
     </div>
   </div>
 </section>
