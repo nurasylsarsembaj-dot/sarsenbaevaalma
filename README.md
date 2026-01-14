@@ -158,7 +158,7 @@ footer { text-align:center; padding:20px; background:#eee; margin-top:40px; }
   <p>Нажмите на кнопку ниже для записи:</p>
   <div class="contact-buttons">
     <a class="contact-btn whatsapp-btn" href="https://wa.me/77003338541" target="_blank">📩 Записаться в WhatsApp</a>
-    <a class="contact-btn instagram-btn" href="https://instagram.com/alma.fohow" target="_blank">📸 Instagram — примеры работ</a>
+    <a class="contact-btn instagram-btn" href="https://instagram.com/fohow__astana?igsh=MWd5NTNremx6bjJjNw%3D%3D&utm_source=qr" target="_blank">📸 Instagram — примеры работ</a>
   </div>
 </section>
 
