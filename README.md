@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -13,16 +14,33 @@ body {
 }
 a { text-decoration: none; }
 
+/* ====== HEADER ====== */
 header {
-  background:#111 url("https://www.joyoflife.ee/media/joy-of-life/Tooted/Fohow/Fohow%20base.png") center/cover no-repeat;
-  color: white;
+  position: relative;
   text-align: center;
-  padding: 40px 20px;
+  color: white;
 }
-header h1 { margin: 0; font-size: 32px; color: #bfa14a; }
-header p { max-width: 600px; margin: 15px auto; font-size: 18px; color: red; }
+header img.bg {
+  width: 100%;
+  display: block;
+}
+header .overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.5); /* полупрозрачный черный фон */
+  padding: 25px 35px;
+  border-radius: 12px;
+  max-width: 900px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #fff;
+}
 
+/* ====== Главная секция ====== */
 .main { max-width: 900px; margin: auto; padding: 20px; }
+
 .card {
   background: white; 
   padding: 20px; 
@@ -66,9 +84,16 @@ header p { max-width: 600px; margin: 15px auto; font-size: 18px; color: red; }
 .gallery-item { width: 100%; border-radius: 10px; }
 .gallery-item img, .gallery-item iframe { width: 100%; border-radius: 10px; height: auto; }
 
+/* Сетка для галереи */
+.gallery-grid {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 15px;
+}
+
 @media(max-width:600px){
-  header h1 { font-size: 24px; }
-  header p { font-size: 16px; }
+  header .overlay-text { font-size: 16px; padding: 15px 20px; }
+  .card { padding: 16px 10px; font-size: 16px; }
   .btn { padding: 12px 18px; font-size: 14px; }
   .company-image img { max-width: 100%; }
   .gallery-item iframe { height: 200px; }
@@ -77,17 +102,19 @@ header p { max-width: 600px; margin: 15px auto; font-size: 18px; color: red; }
 </head>
 <body>
 
+<!-- ======= HEADER ======= -->
 <header>
-  <h1>Алма Сарсенбаева</h1>
-  <p>
+  <img class="bg" src="https://www.joyoflife.ee/media/joy-of-life/Tooted/Fohow/Fohow%20base.png" alt="Фон">
+  <div class="overlay-text">
     Добро пожаловать! Рады видеть вас на нашем сайте! Меня зовут Алма Сарсенбаева,
     и вместе с моей дочерью мы являемся профессиональными массажистами компании Fohow.
     Здесь вы можете узнать больше о нас, о нашей компании и об услугах, которые мы
     с любовью предоставляем нашим клиентам. Мы будем рады помочь вам заботиться
     о здоровье и гармонии вашего тела.
-  </p>
+  </div>
 </header>
 
+<!-- ======= Главная ======= -->
 <div class="main" id="home">
   <div class="card" onclick="openSection('company')">Про компанию</div>
   <div class="card" onclick="openSection('services')">Услуги</div>
@@ -168,7 +195,7 @@ header p { max-width: 600px; margin: 15px auto; font-size: 18px; color: red; }
   <div class="back" onclick="goBack()">← Назад</div>
   <h2>Фото и видео</h2>
 
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+  <div class="gallery-grid">
     <div class="gallery-item"><img src="https://avatars.mds.yandex.net/get-altay/4699294/2a0000017b7ccf95dd1610f534a0a7a21b08/XXL_height" alt="Фото 1" loading="lazy"></div>
     <div class="gallery-item"><iframe src="https://rutube.ru/play/embed/d24bb55a2aa3c75f203d6407c242af42/" frameborder="0" allowfullscreen loading="lazy"></iframe></div>
     <div class="gallery-item"><img src="https://avatars.mds.yandex.net/get-altay/10953738/2a0000018a1971ea07aa71ab6d3f7667d0a3/XXL_height" alt="Фото 2" loading="lazy"></div>
