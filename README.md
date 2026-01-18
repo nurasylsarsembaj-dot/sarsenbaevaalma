@@ -10,7 +10,6 @@ body {
   font-family: Arial, sans-serif;
   background: #f5f5f5;
   color: #111;
-  scroll-behavior: smooth;
 }
 
 a { text-decoration: none; }
@@ -23,7 +22,6 @@ header {
 }
 
 header h1 { margin: 0; font-size: 32px; color: #bfa14a; }
-
 header p { max-width: 600px; margin: 15px auto; font-size: 18px; color: red; }
 
 .main { max-width: 900px; margin: auto; padding: 20px; }
@@ -44,12 +42,16 @@ header p { max-width: 600px; margin: 15px auto; font-size: 18px; color: red; }
   background: #fafafa;
 }
 
-.section { 
+.section {
+  display: none; 
   background: white;
   padding: 20px; 
   border-radius: 14px;
-  margin-bottom: 40px;
+  opacity: 0; 
+  transition: opacity 0.3s;
 }
+.section.show { display: block; opacity: 1; }
+.section.hide { opacity: 0; transition: opacity 0.3s; }
 
 .back { display: inline-block; margin-bottom: 20px; color: #bfa14a; font-weight: bold; cursor: pointer; }
 
@@ -89,10 +91,10 @@ header p { max-width: 600px; margin: 15px auto; font-size: 18px; color: red; }
 </header>
 
 <div class="main" id="home">
-  <a class="card" href="#company">Про компанию</a>
-  <a class="card" href="#services">Услуги</a>
-  <a class="card" href="#gallery">Фото и видео</a>
-  <a class="card" href="#business">Бизнес‑возможности</a>
+  <div class="card" onclick="openSection('company')">Про компанию</div>
+  <div class="card" onclick="openSection('services')">Услуги</div>
+  <div class="card" onclick="openSection('gallery')">Фото и видео</div>
+  <div class="card" onclick="openSection('business')">Бизнес‑возможности</div>
 
   <div class="contacts">
     <a class="btn wh1" href="https://wa.me/87003338541" target="_blank">WhatsApp</a>
@@ -103,11 +105,12 @@ header p { max-width: 600px; margin: 15px auto; font-size: 18px; color: red; }
 
 <!-- ======= Про компанию ======= -->
 <div class="main section" id="company">
+  <div class="back" onclick="goBack()">← Назад</div>
   <h2>О компании Fohow</h2>
   <p>Fohow — международная компания, которая сочетает традиционную китайскую медицину и современные технологии, создавая натуральные продукты для здоровья и красоты.</p>
 
   <h3>История компании</h3>
-  <p>Компания была основана в 1995 году и с тех пор активно развивается на международном рынке. Сегодня Fohow представлена в более чем 80 странах мира.</p>
+  <p>Компания была основана в 1995 году и активно развивается на международном рынке. Сегодня Fohow представлена в более чем 80 странах мира.</p>
   <div class="company-image"><img src="https://i.ytimg.com/vi/RtyoRQ_TQfc/maxresdefault.jpg" alt="История компании" loading="lazy"></div>
 
   <h3>Миссия и философия</h3>
@@ -117,20 +120,24 @@ header p { max-width: 600px; margin: 15px auto; font-size: 18px; color: red; }
 
 <!-- ======= Услуги ======= -->
 <div class="main section" id="services">
+  <div class="back" onclick="goBack()">← Назад</div>
   <h2>Услуги</h2>
   <p>3 массажа за 5 000 ₸ для пенсионеров. Забота, тепло, внимание и восстановление.</p>
 </div>
 
 <!-- ======= Галерея (фото и видео чередуются) ======= -->
 <div class="main section" id="gallery">
+  <div class="back" onclick="goBack()">← Назад</div>
   <h2>Фото и видео</h2>
 
   <div class="gallery-item"><img src="https://avatars.mds.yandex.net/get-altay/4699294/2a0000017b7ccf95dd1610f534a0a7a21b08/XXL_height" alt="Фото 1" loading="lazy"></div>
-  <div class="gallery-item"><iframe src="https://rutube.ru/video/d24bb55a2aa3c75f203d6407c242af42/" frameborder="0" allowfullscreen loading="lazy"></iframe></div>
-  
+  <div class="gallery-item">
+    <iframe src="https://rutube.ru/play/embed/d24bb55a2aa3c75f203d6407c242af42/" frameborder="0" allowfullscreen loading="lazy"></iframe>
+  </div>
   <div class="gallery-item"><img src="https://avatars.mds.yandex.net/get-altay/10953738/2a0000018a1971ea07aa71ab6d3f7667d0a3/XXL_height" alt="Фото 2" loading="lazy"></div>
-  <div class="gallery-item"><iframe src="https://rutube.ru/video/7814f896ecfb299468f8f279335dd574/" frameborder="0" allowfullscreen loading="lazy"></iframe></div>
-  
+  <div class="gallery-item">
+    <iframe src="https://rutube.ru/play/embed/7814f896ecfb299468f8f279335dd574/" frameborder="0" allowfullscreen loading="lazy"></iframe>
+  </div>
   <div class="gallery-item"><img src="https://static.tildacdn.com/tild3732-3035-4163-b563-653034653033/1.png" alt="Фото 3" loading="lazy"></div>
   <div class="gallery-item"><img src="https://avatars.mds.yandex.net/get-altay/11471993/2a00000190aef173b84f4d02eb34ccb87c23/XXL_height" alt="Фото 4" loading="lazy"></div>
   <div class="gallery-item"><img src="https://frankfurt.apollo.olxcdn.com/v1/files/tpzr1rzubpak2-KZ/image" alt="Фото 5" loading="lazy"></div>
@@ -138,9 +145,28 @@ header p { max-width: 600px; margin: 15px auto; font-size: 18px; color: red; }
 
 <!-- ======= Бизнес ======= -->
 <div class="main section" id="business">
+  <div class="back" onclick="goBack()">← Назад</div>
   <h2>Бизнес с Fohow</h2>
   <p>Возможность строить доход с поддержкой компании.</p>
 </div>
+
+<script>
+function openSection(id){
+  document.getElementById("home").style.display="none";
+  document.querySelectorAll(".section").forEach(s => s.classList.remove("show","hide"));
+  const section = document.getElementById(id);
+  section.style.display = "block";
+  setTimeout(()=> section.classList.add("show"), 50);
+}
+
+function goBack(){
+  document.querySelectorAll(".section").forEach(s => s.classList.add("hide"));
+  setTimeout(() => {
+    document.querySelectorAll(".section").forEach(s => s.style.display = "none");
+    document.getElementById("home").style.display = "block";
+  }, 300);
+}
+</script>
 
 </body>
 </html>
