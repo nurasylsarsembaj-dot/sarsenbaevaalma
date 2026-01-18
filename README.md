@@ -11,7 +11,6 @@ body {
   background: #f5f5f5;
   color: #111;
 }
-
 a { text-decoration: none; }
 
 header {
@@ -20,12 +19,10 @@ header {
   text-align: center;
   padding: 40px 20px;
 }
-
 header h1 { margin: 0; font-size: 32px; color: #bfa14a; }
 header p { max-width: 600px; margin: 15px auto; font-size: 18px; color: red; }
 
 .main { max-width: 900px; margin: auto; padding: 20px; }
-
 .card {
   background: white; 
   padding: 20px; 
@@ -66,8 +63,8 @@ header p { max-width: 600px; margin: 15px auto; font-size: 18px; color: red; }
 .company-image { text-align: center; margin: 15px 0; }
 .company-image img { width: 100%; max-width: 500px; border-radius: 10px; }
 
-.gallery-item { width: 100%; margin: 15px 0; border-radius: 10px; }
-.gallery-item img, .gallery-item iframe { width: 100%; border-radius: 10px; }
+.gallery-item { width: 100%; border-radius: 10px; }
+.gallery-item img, .gallery-item iframe { width: 100%; border-radius: 10px; height: auto; }
 
 @media(max-width:600px){
   header h1 { font-size: 24px; }
@@ -166,18 +163,20 @@ header p { max-width: 600px; margin: 15px auto; font-size: 18px; color: red; }
   <p>3 массажа за 5 000 ₸ для пенсионеров. Забота, тепло, внимание и восстановление.</p>
 </div>
 
-<!-- ======= Галерея (чередование фото и видео) ======= -->
+<!-- ======= Галерея (2 колонки, фото и видео) ======= -->
 <div class="main section" id="gallery">
   <div class="back" onclick="goBack()">← Назад</div>
   <h2>Фото и видео</h2>
 
-  <div class="gallery-item"><img src="https://avatars.mds.yandex.net/get-altay/4699294/2a0000017b7ccf95dd1610f534a0a7a21b08/XXL_height" alt="Фото 1" loading="lazy"></div>
-  <div class="gallery-item"><iframe src="https://rutube.ru/play/embed/d24bb55a2aa3c75f203d6407c242af42/" frameborder="0" allowfullscreen loading="lazy"></iframe></div>
-  <div class="gallery-item"><img src="https://avatars.mds.yandex.net/get-altay/10953738/2a0000018a1971ea07aa71ab6d3f7667d0a3/XXL_height" alt="Фото 2" loading="lazy"></div>
-  <div class="gallery-item"><iframe src="https://rutube.ru/play/embed/7814f896ecfb299468f8f279335dd574/" frameborder="0" allowfullscreen loading="lazy"></iframe></div>
-  <div class="gallery-item"><img src="https://static.tildacdn.com/tild3732-3035-4163-b563-653034653033/1.png" alt="Фото 3" loading="lazy"></div>
-  <div class="gallery-item"><img src="https://avatars.mds.yandex.net/get-altay/11471993/2a00000190aef173b84f4d02eb34ccb87c23/XXL_height" alt="Фото 4" loading="lazy"></div>
-  <div class="gallery-item"><img src="https://frankfurt.apollo.olxcdn.com/v1/files/tpzr1rzubpak2-KZ/image" alt="Фото 5" loading="lazy"></div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+    <div class="gallery-item"><img src="https://avatars.mds.yandex.net/get-altay/4699294/2a0000017b7ccf95dd1610f534a0a7a21b08/XXL_height" alt="Фото 1" loading="lazy"></div>
+    <div class="gallery-item"><iframe src="https://rutube.ru/play/embed/d24bb55a2aa3c75f203d6407c242af42/" frameborder="0" allowfullscreen loading="lazy"></iframe></div>
+    <div class="gallery-item"><img src="https://avatars.mds.yandex.net/get-altay/10953738/2a0000018a1971ea07aa71ab6d3f7667d0a3/XXL_height" alt="Фото 2" loading="lazy"></div>
+    <div class="gallery-item"><iframe src="https://rutube.ru/play/embed/7814f896ecfb299468f8f279335dd574/" frameborder="0" allowfullscreen loading="lazy"></iframe></div>
+    <div class="gallery-item"><img src="https://static.tildacdn.com/tild3732-3035-4163-b563-653034653033/1.png" alt="Фото 3" loading="lazy"></div>
+    <div class="gallery-item"><img src="https://avatars.mds.yandex.net/get-altay/11471993/2a00000190aef173b84f4d02eb34ccb87c23/XXL_height" alt="Фото 4" loading="lazy"></div>
+    <div class="gallery-item"><img src="https://frankfurt.apollo.olxcdn.com/v1/files/tpzr1rzubpak2-KZ/image" alt="Фото 5" loading="lazy"></div>
+  </div>
 </div>
 
 <!-- ======= Бизнес ======= -->
