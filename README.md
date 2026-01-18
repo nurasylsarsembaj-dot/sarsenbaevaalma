@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -114,11 +113,24 @@ header p {
   transform: scale(1.02);
 }
 
+/* ======= Изображения внутри компании ======= */
+.company-image {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.company-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
 /* ======= Адаптив ======= */
 @media(max-width:600px){
   header h1 { font-size: 24px; }
   header p { font-size: 16px; }
   .btn { padding: 12px 18px; font-size: 14px; }
+  .company-image img { max-width: 100%; }
 }
 </style>
 </head>
@@ -129,6 +141,7 @@ header p {
   <p>Специалист по био-массажу Fohow</p>
 </header>
 
+<!-- ======= Главная секция ======= -->
 <div class="main" id="home">
   <div class="card" onclick="openSection('company')">Про компанию</div>
   <div class="card" onclick="openSection('services')">Услуги</div>
@@ -142,25 +155,76 @@ header p {
   </div>
 </div>
 
-<!-- ======= Секции ======= -->
+<!-- ======= Секция: Про компанию ======= -->
 <div class="main section" id="company">
   <div class="back" onclick="goBack()">← Назад</div>
   <h2>О компании Fohow</h2>
-  <p>Fohow Group Co., Ltd — международная корпорация, работающая на принципах традиционной китайской медицины.</p>
+
+  <p>
+    Fohow — международная компания, которая сочетает традиционную китайскую медицину и современные технологии, создавая натуральные продукты для здоровья и красоты.
+  </p>
+
+  <h3>История компании</h3>
+  <p>
+    Компания была основана в 1995 году и с тех пор активно развивается на международном рынке.
+    Сегодня Fohow представлена в более чем 80 странах мира.
+  </p>
+  <div class="company-image">
+    <img src="https://i.ytimg.com/vi/RtyoRQ_TQfc/maxresdefault.jpg" alt="История компании Fohow">
+  </div>
+
+  <h3>Миссия и философия</h3>
+  <p>
+    Мы стремимся делать здоровье доступным каждому, используя безопасные и проверенные натуральные компоненты.
+    Наши принципы: натуральность, инновации, качество, гармония тела и духа.
+  </p>
+  <div class="company-image">
+    <img src="https://i.ytimg.com/vi/MotIRWPEbbU/maxresdefault.jpg" alt="Миссия и философия Fohow">
+  </div>
+
+  <h3>Продукция</h3>
+  <ul>
+    <li>Биодобавки и витамины</li>
+    <li>Средства для иммунитета</li>
+    <li>Натуральные экстракты и концентраты</li>
+    <li>Уходовые продукты для красоты</li>
+  </ul>
+  <div class="company-image">
+    <img src="https://sun9-26.userapi.com/c849220/v849220455/1b3a7/m-sbX1q9-wE.jpg" alt="Продукция Fohow">
+  </div>
+
+  <h3>Научные исследования и производство</h3>
+  <p>
+    Компания имеет собственные научно-исследовательские центры и производства с международными сертификатами качества ISO и GMP.
+  </p>
+  <div class="company-image">
+    <img src="https://i.ytimg.com/vi/t_EHWHbNU50/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-DoACuAiKAgwIABABGDUgXShlMA8=&rs=AOn4CLCoUqtLvszMDh6uzUYqARYdP58YGQ" alt="Лаборатория и производство Fohow">
+  </div>
+
+  <h3>Культура здоровья</h3>
+  <p>
+    Философия Fohow основана на трёх шагах: регуляция → очистка → восстановление, что отражено во всех продуктах компании.
+  </p>
+  <div class="company-image">
+    <img src="https://via.placeholder.com/500x200?text=Регуляция+→+Очистка+→+Восстановление" alt="Культура здоровья Fohow">
+  </div>
 </div>
 
+<!-- ======= Секция: Услуги ======= -->
 <div class="main section" id="services">
   <div class="back" onclick="goBack()">← Назад</div>
   <h2>Услуги</h2>
   <p>3 массажа за 5 000 ₸ для пенсионеров. Забота, тепло, внимание и восстановление.</p>
 </div>
 
+<!-- ======= Секция: Галерея ======= -->
 <div class="main section" id="gallery">
   <div class="back" onclick="goBack()">← Назад</div>
   <h2>Фото и видео</h2>
   <img class="gallery-img" src="https://mirazdrav.ru/templates/yootheme/cache/photo_5334552357947700508_y-29bddcff.jpeg" alt="Массаж" onclick="zoomImage(this)">
 </div>
 
+<!-- ======= Секция: Бизнес ======= -->
 <div class="main section" id="business">
   <div class="back" onclick="goBack()">← Назад</div>
   <h2>Бизнес с Fohow</h2>
