@@ -12,7 +12,7 @@ body{
     color:#222;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
     position:fixed;
     top:0;
@@ -33,20 +33,23 @@ header nav a{
     text-decoration:none;
 }
 
-/* ===== SECTIONS ===== */
+/* SECTIONS */
 section{
-    padding:80px 20px;
+    padding:70px 20px;
     max-width:1100px;
     margin:auto;
+}
+section:first-of-type{
+    padding-top:110px; /* чтобы меню не перекрывало */
 }
 h2{
     text-align:center;
     margin-bottom:30px;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
-    height:100vh;
+    height:70vh; /* было слишком большое */
     background:url("https://www.joyoflife.ee/media/joy-of-life/Tooted/Fohow/Fohow%20base.png") center/cover no-repeat;
     position:relative;
     display:flex;
@@ -67,9 +70,31 @@ h2{
     max-width:700px;
 }
 .hero h1{font-size:32px;margin-bottom:15px;}
-.hero p{font-size:18px;margin-bottom:25px;}
+.hero p{font-size:18px;}
 
-/* ===== BUTTONS ===== */
+/* CARDS */
+.card{
+    background:#f5f5f5;
+    padding:22px;
+    border-radius:10px;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+}
+
+/* GALLERY */
+.gallery iframe,.gallery img{
+    width:100%;
+    height:260px;
+    border-radius:10px;
+    border:none;
+}
+
+/* BUTTONS */
 .btn{
     display:inline-block;
     padding:12px 22px;
@@ -86,34 +111,7 @@ h2{
 }
 .btn-instagram{background:#C13584;color:#fff;}
 
-/* ===== GRID ===== */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:20px;
-}
-.card{
-    background:#f5f5f5;
-    padding:22px;
-    border-radius:10px;
-}
-
-/* ===== GALLERY ===== */
-.gallery iframe,.gallery img{
-    width:100%;
-    height:260px;
-    border-radius:10px;
-    border:none;
-}
-
-/* ===== PRICE ===== */
-.price{
-    font-size:22px;
-    color:#b08d2d;
-    font-weight:bold;
-}
-
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{
     background:#eee;
     padding:20px;
@@ -121,7 +119,7 @@ footer{
     font-size:14px;
 }
 
-/* ===== MOBILE ===== */
+/* MOBILE */
 @media(max-width:600px){
     header nav a{font-size:12px;margin:0 5px;}
     .hero h1{font-size:24px;}
@@ -142,61 +140,33 @@ footer{
     </nav>
 </header>
 
-<!-- HERO -->
+<!-- HERO (БЕЗ КНОПОК) -->
 <section class="hero" id="hero">
     <div class="hero-content">
-        <h1>Алма Сарсенбаева — био-массаж Fohow</h1>
-        <p>Восстановление энергии, снятие напряжения и забота о здоровье</p>
-
-        <!-- СТАРЫЙ НОМЕР -->
-        <a class="btn btn-gold" href="https://wa.me/87003338541">
-            WhatsApp (основной)
-        </a>
-
-        <!-- НОВЫЙ НОМЕР -->
-        <a class="btn btn-whatsapp" href="https://wa.me/87072711221">
-            WhatsApp (акция)
-        </a>
-
-        <a class="btn btn-instagram" href="https://instagram.com">
-            Instagram
-        </a>
+        <h1>Алма Сарсенбаева</h1>
+        <p>Био-массаж Fohow — восстановление энергии и забота о здоровье</p>
     </div>
 </section>
 
-<!-- COMPANY -->
 <section id="company">
 <h2>О компании Fohow</h2>
 <div class="card">
-Fohow Group Co., Ltd — международная корпорация, основанная на традиционной китайской медицине.
-Продукция и методики направлены на восстановление баланса и профилактику.
+Fohow Group Co., Ltd — международная корпорация, основанная на традиционной китайской медицине и принципах Ян-Шэн.
 </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services">
 <h2>Услуги и акция</h2>
 <div class="card">
 <b>С заботой о старшем поколении</b><br><br>
-
-✨ <b>3 дня — 3 массажа всего за <span class="price">5 000 ₸</span></b><br><br>
-
-✔ 3 лечебных массажа (3 дня подряд)<br>
-✔ Бережная, спокойная работа<br>
-✔ Тёплый травяной чай<br>
-✔ Уютная атмосфера<br>
-✔ Живое общение и внимание<br><br>
-
-📲 Запись по акции:<br>
-<b>+7 707 271 12 21</b><br><br>
-
-<a class="btn btn-whatsapp" href="https://wa.me/87072711221">
-Записаться по акции
-</a>
+✨ <b>3 дня — 3 массажа всего за <span style="color:#b08d2d;font-size:20px;">5 000 ₸</span></b><br><br>
+✔ Лечебный массаж<br>
+✔ Спокойная, бережная работа<br>
+✔ Травяной чай<br>
+✔ Уютная атмосфера и внимание
 </div>
 </section>
 
-<!-- GALLERY -->
 <section id="gallery">
 <h2>Фото и видео</h2>
 <div class="grid gallery">
@@ -213,15 +183,13 @@ Fohow Group Co., Ltd — международная корпорация, осн
 </div>
 </section>
 
-<!-- BUSINESS -->
 <section id="business">
 <h2>Бизнес-возможности</h2>
 <div class="card">
-Возможность развивать собственный бизнес с поддержкой Fohow.
+Партнёрство с Fohow — возможность развивать собственный бизнес с поддержкой международной компании.
 </div>
 </section>
 
-<!-- CONTACTS -->
 <section id="contacts">
 <h2>Контакты</h2>
 
@@ -231,6 +199,10 @@ WhatsApp (основной)
 
 <a class="btn btn-whatsapp" href="https://wa.me/87072711221">
 WhatsApp (акция)
+</a>
+
+<a class="btn btn-instagram" href="https://instagram.com">
+Instagram
 </a>
 
 </section>
