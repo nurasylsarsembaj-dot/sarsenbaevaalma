@@ -47,6 +47,7 @@ header p { max-width: 600px; margin: 15px auto; font-size: 18px; color: red; }
   background: white;
   padding: 20px; 
   border-radius: 14px;
+  margin-bottom: 40px;
   opacity: 0; 
   transition: opacity 0.3s;
 }
@@ -107,15 +108,55 @@ header p { max-width: 600px; margin: 15px auto; font-size: 18px; color: red; }
 <div class="main section" id="company">
   <div class="back" onclick="goBack()">← Назад</div>
   <h2>О компании Fohow</h2>
-  <p>Fohow — международная компания, которая сочетает традиционную китайскую медицину и современные технологии, создавая натуральные продукты для здоровья и красоты.</p>
+  <p><strong>Fohow Group Co., Ltd</strong> — крупная международная корпорация из Китая, специализирующаяся на исследованиях, производстве и распространении натуральной оздоровительной продукции на основе Традиционной китайской медицины (ТКМ).</p>
+  <div class="company-image"><img src="https://i.ytimg.com/vi/RtyoRQ_TQfc/maxresdefault.jpg" alt="О компании Fohow" loading="lazy"></div>
 
   <h3>История компании</h3>
-  <p>Компания была основана в 1995 году и активно развивается на международном рынке. Сегодня Fohow представлена в более чем 80 странах мира.</p>
-  <div class="company-image"><img src="https://i.ytimg.com/vi/RtyoRQ_TQfc/maxresdefault.jpg" alt="История компании" loading="lazy"></div>
+  <p>1995 — основатель господин Ю Фэй начал деятельность в области здоровья и натуральных продуктов.<br>
+     1999 — создан первый производственный центр по выпуску оздоровительных продуктов.<br>
+     2007 — корпорация официально выходит на международный рынок.<br>
+     Сегодня Fohow работает более чем в 86 странах и регионах Европы, Азии, Африки и Америки, с тысячами филиалов и представительств по всему миру.</p>
+  <div class="company-image"><img src="https://i.ytimg.com/vi/5I7h5QCNbRA/maxresdefault.jpg" alt="История компании" loading="lazy"></div>
 
   <h3>Миссия и философия</h3>
-  <p>Мы стремимся делать здоровье доступным каждому, используя безопасные и проверенные натуральные компоненты. Наши принципы: натуральность, инновации, качество, гармония тела и духа.</p>
-  <div class="company-image"><img src="https://i.ytimg.com/vi/MotIRWPEbbU/maxresdefault.jpg" alt="Миссия и философия" loading="lazy"></div>
+  <p>Корпорация стремится распространять культуру заботы о здоровье и долголетии, сочетая традиции ТКМ и современные научные технологии.</p>
+  <ul>
+    <li>Здоровье через традиции и инновации</li>
+    <li>Натуральность и безопасность продукции</li>
+    <li>Польза для ежедневного применения</li>
+    <li>Устойчивый международный рост</li>
+  </ul>
+
+  <h3>Продукция и направления</h3>
+  <p>Компания предлагает широкий спектр продукции для поддержки здоровья:</p>
+  <ul>
+    <li>Биологически активные добавки (БАДы) и эликсиры</li>
+    <li>Натуральные пищевые добавки</li>
+    <li>Растительные концентраты и экстракты</li>
+    <li>Уходовые средства и оздоровительные приборы</li>
+    <li>Продукты для иммунитета, энергии, очищения и регуляции баланса организма</li>
+  </ul>
+  <div class="company-image"><img src="https://www.info.lt/images/nuotraukos/2460225_1.jpg?202304280943" alt="Продукция Fohow" loading="lazy"></div>
+
+  <h3>Научные исследования и производство</h3>
+  <p>Fohow располагает собственной научно‑исследовательской базой:</p>
+  <ul>
+    <li>НИИ Ян‑Шэн Fohow – центр разработок и исследований</li>
+    <li>Эко‑Агро Fohow – выращивание лекарственных растений</li>
+    <li>Биотехнологические и фармацевтические производства</li>
+  </ul>
+  <p>Производственные процессы сертифицированы по международным стандартам ISO, GMP, HACCP, что подтверждает безопасность и качество продукции.</p>
+
+  <h3>Международное присутствие</h3>
+  <p>Компания работает в десятках стран, продукция зарегистрирована и продаётся в Европе, Азии, Америке и других регионах. Открыто более 1000 центров, филиалов и представительств по всему миру.</p>
+
+  <h3>Культура здоровья Fohow</h3>
+  <p>Fohow развивает идеи, основанные на ТКМ:</p>
+  <ul>
+    <li>Регуляция — восстановление баланса в организме</li>
+    <li>Очистка — удаление токсинов и шлаков</li>
+    <li>Восстановление — укрепление и питание тела</li>
+  </ul>
 </div>
 
 <!-- ======= Услуги ======= -->
@@ -125,19 +166,15 @@ header p { max-width: 600px; margin: 15px auto; font-size: 18px; color: red; }
   <p>3 массажа за 5 000 ₸ для пенсионеров. Забота, тепло, внимание и восстановление.</p>
 </div>
 
-<!-- ======= Галерея (фото и видео чередуются) ======= -->
+<!-- ======= Галерея (чередование фото и видео) ======= -->
 <div class="main section" id="gallery">
   <div class="back" onclick="goBack()">← Назад</div>
   <h2>Фото и видео</h2>
 
   <div class="gallery-item"><img src="https://avatars.mds.yandex.net/get-altay/4699294/2a0000017b7ccf95dd1610f534a0a7a21b08/XXL_height" alt="Фото 1" loading="lazy"></div>
-  <div class="gallery-item">
-    <iframe src="https://rutube.ru/play/embed/d24bb55a2aa3c75f203d6407c242af42/" frameborder="0" allowfullscreen loading="lazy"></iframe>
-  </div>
+  <div class="gallery-item"><iframe src="https://rutube.ru/play/embed/d24bb55a2aa3c75f203d6407c242af42/" frameborder="0" allowfullscreen loading="lazy"></iframe></div>
   <div class="gallery-item"><img src="https://avatars.mds.yandex.net/get-altay/10953738/2a0000018a1971ea07aa71ab6d3f7667d0a3/XXL_height" alt="Фото 2" loading="lazy"></div>
-  <div class="gallery-item">
-    <iframe src="https://rutube.ru/play/embed/7814f896ecfb299468f8f279335dd574/" frameborder="0" allowfullscreen loading="lazy"></iframe>
-  </div>
+  <div class="gallery-item"><iframe src="https://rutube.ru/play/embed/7814f896ecfb299468f8f279335dd574/" frameborder="0" allowfullscreen loading="lazy"></iframe></div>
   <div class="gallery-item"><img src="https://static.tildacdn.com/tild3732-3035-4163-b563-653034653033/1.png" alt="Фото 3" loading="lazy"></div>
   <div class="gallery-item"><img src="https://avatars.mds.yandex.net/get-altay/11471993/2a00000190aef173b84f4d02eb34ccb87c23/XXL_height" alt="Фото 4" loading="lazy"></div>
   <div class="gallery-item"><img src="https://frankfurt.apollo.olxcdn.com/v1/files/tpzr1rzubpak2-KZ/image" alt="Фото 5" loading="lazy"></div>
