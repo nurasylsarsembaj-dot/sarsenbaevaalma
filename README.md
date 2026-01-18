@@ -2,166 +2,241 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Алма Сарсенбаева — Био-массаж Fohow</title>
+<title>Алма Сарсенбаева — био-массаж Fohow</title>
+
 <style>
-/* Сброс и базовые стили */
-body, html { margin:0; padding:0; font-family: Arial, sans-serif; scroll-behavior: smooth; }
-a { text-decoration: none; color: inherit; }
-
-/* Меню */
-header { position: fixed; width: 100%; background: rgba(255,255,255,0.95); display:flex; justify-content:space-between; align-items:center; padding:10px 20px; box-shadow:0 2px 5px rgba(0,0,0,0.1); z-index:1000; }
-header nav a { margin:0 10px; font-weight:bold; color:#333; }
-header nav a:hover { color:#4CAF50; }
-
-/* Hero */
-.hero {
-    height: 60vh;
-    min-height: 400px;
-    max-height: 700px;
-    background-image: url('https://www.joyoflife.ee/media/joy-of-life/Tooted/Fohow/Fohow%20base.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    position: relative;
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    scroll-behavior:smooth;
+    color:#222;
 }
-.hero::after {
+
+/* ===== HEADER ===== */
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(255,255,255,0.95);
+    padding:8px 16px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+header nav a{
+    margin:0 8px;
+    font-size:14px;
+    font-weight:bold;
+    color:#333;
+    text-decoration:none;
+}
+
+/* ===== SECTIONS ===== */
+section{
+    padding:80px 20px;
+    max-width:1100px;
+    margin:auto;
+}
+h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+/* ===== HERO ===== */
+.hero{
+    height:100vh;
+    background:url("https://www.joyoflife.ee/media/joy-of-life/Tooted/Fohow/Fohow%20base.png") center/cover no-repeat;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+.hero::after{
     content:"";
     position:absolute;
-    top:0; left:0;
-    width:100%; height:100%;
-    background: rgba(0,0,0,0.45);
+    inset:0;
+    background:rgba(0,0,0,0.45);
 }
-.hero-content { position: relative; z-index:1; max-width:800px; }
-.hero h1 { font-size:2.5em; margin-bottom:10px; }
-.hero p { font-size:1.2em; margin-bottom:20px; }
-.buttons a { padding:15px 30px; margin:5px; border-radius:10px; font-weight:bold; display:inline-block; transition:0.3s; font-size:1.1em; }
-.whatsapp-btn { background:#25D366; color: #FFD700; font-weight:bold; } /* золотистый текст */
-.whatsapp-btn:hover { background:#1ebe5d; }
-.instagram-btn { background:#E1306C; color:#fff; }
-.instagram-btn:hover { background:#c72b61; }
+.hero-content{
+    position:relative;
+    z-index:2;
+    color:#fff;
+    max-width:700px;
+}
+.hero h1{font-size:32px;margin-bottom:15px;}
+.hero p{font-size:18px;margin-bottom:25px;}
 
-/* Секции */
-section { padding:80px 20px; max-width:1000px; margin:auto; }
-section h2 { text-align:center; margin-bottom:30px; color:#4CAF50; }
-section h3 { margin-top:20px; color:#4CAF50; }
-section p, section ul { line-height:1.6; margin-bottom:10px; }
-section ul { padding-left:20px; }
+/* ===== BUTTONS ===== */
+.btn{
+    display:inline-block;
+    padding:12px 22px;
+    border-radius:6px;
+    margin:6px;
+    font-weight:bold;
+    text-decoration:none;
+}
+.btn-whatsapp{background:#25D366;color:#fff;}
+.btn-gold{
+    background:#111;
+    color:#d4af37;
+    border:1px solid #d4af37;
+}
+.btn-instagram{background:#C13584;color:#fff;}
 
-/* Галерея */
-.gallery-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-.gallery-grid img { width:100%; border-radius:8px; }
+/* ===== GRID ===== */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+}
+.card{
+    background:#f5f5f5;
+    padding:22px;
+    border-radius:10px;
+}
 
-/* Контакты */
-.contacts-section { background:#f5f5f5; text-align:center; padding:60px 20px; border-radius:15px; margin:40px auto; max-width:800px; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
-.contact-buttons { display:flex; flex-direction: column; gap:20px; align-items:center; }
-.contact-btn { display:block; width:270px; padding:18px 30px; font-size:1.2em; font-weight:bold; border-radius:12px; text-decoration:none; transition:0.3s; }
-.contact-btn.whatsapp-btn { background:#25D366; color:#FFD700; }
-.contact-btn.whatsapp-btn:hover { background:#1ebe5d; }
-.contact-btn.instagram-btn { background:#E1306C; color:#fff; }
-.contact-btn.instagram-btn:hover { background:#c72b61; }
+/* ===== GALLERY ===== */
+.gallery iframe,.gallery img{
+    width:100%;
+    height:260px;
+    border-radius:10px;
+    border:none;
+}
 
-/* Footer */
-footer { text-align:center; padding:20px; background:#eee; margin-top:40px; }
+/* ===== PRICE ===== */
+.price{
+    font-size:22px;
+    color:#b08d2d;
+    font-weight:bold;
+}
 
-/* Адаптив */
-@media (max-width:768px) {
-    .hero h1 { font-size:2em; }
-    .hero p { font-size:1em; }
-    .contact-btn { width:90%; }
+/* ===== FOOTER ===== */
+footer{
+    background:#eee;
+    padding:20px;
+    text-align:center;
+    font-size:14px;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:600px){
+    header nav a{font-size:12px;margin:0 5px;}
+    .hero h1{font-size:24px;}
 }
 </style>
 </head>
+
 <body>
 
 <header>
-  <div>Fohow — Алма Сарсенбаева</div>
-  <nav>
-    <a href="#hero">Главная</a>
-    <a href="#company">Про компанию</a>
-    <a href="#specialist">Про специалиста</a>
-    <a href="#services">Услуги</a>
-    <a href="#gallery">Фото/Видео</a>
-    <a href="#business">Бизнес</a>
-    <a href="#contacts">Контакты</a>
-  </nav>
+    <div><b>FOHOW</b></div>
+    <nav>
+        <a href="#company">Компания</a>
+        <a href="#services">Услуги</a>
+        <a href="#gallery">Фото/Видео</a>
+        <a href="#business">Бизнес</a>
+        <a href="#contacts">Контакты</a>
+    </nav>
 </header>
 
-<section id="hero" class="hero">
-  <div class="hero-content">
-    <h1>Алма Сарсенбаева — специалист по био‑массажу Fohow</h1>
-    <p>Био‑массаж восстанавливает энергию, снимает напряжение и улучшает самочувствие. Подходит людям любого возраста.</p>
-    <div class="buttons">
+<!-- HERO -->
+<section class="hero" id="hero">
+    <div class="hero-content">
+        <h1>Алма Сарсенбаева — био-массаж Fohow</h1>
+        <p>Восстановление энергии, снятие напряжения и забота о здоровье</p>
+
+        <!-- СТАРЫЙ НОМЕР -->
+        <a class="btn btn-gold" href="https://wa.me/87003338541">
+            WhatsApp (основной)
+        </a>
+
+        <!-- НОВЫЙ НОМЕР -->
+        <a class="btn btn-whatsapp" href="https://wa.me/87072711221">
+            WhatsApp (акция)
+        </a>
+
+        <a class="btn btn-instagram" href="https://instagram.com">
+            Instagram
+        </a>
     </div>
-  </div>
 </section>
 
+<!-- COMPANY -->
 <section id="company">
-  <h2>О компании Fohow (Фохоу)</h2>
-  <p>Fohow Group Co., Ltd — крупная международная корпорация, занимающаяся исследованиями, разработкой, производством и продвижением натуральных оздоровительных продуктов на основе принципов Традиционной китайской медицины (ТКМ).</p>
-  <h3>Главные факты</h3>
-  <ul>
-    <li>Название: Fohow (Фохоу)</li>
-    <li>Полное юридическое название: Fohow Group Co., Ltd</li>
-    <li>Страна происхождения: Китай</li>
-    <li>Год начала международной деятельности: 2007</li>
-    <li>Глобальное присутствие: более чем в 86–90 странах</li>
-  </ul>
-  <h3>Миссия и ценности</h3>
-  <ul>
-    <li>Натуральность и безопасность</li>
-    <li>Инновации и научный подход</li>
-    <li>Комплексный подход к здоровью</li>
-  </ul>
+<h2>О компании Fohow</h2>
+<div class="card">
+Fohow Group Co., Ltd — международная корпорация, основанная на традиционной китайской медицине.
+Продукция и методики направлены на восстановление баланса и профилактику.
+</div>
 </section>
 
-<section id="specialist">
-  <h2>Про специалиста</h2>
-  <p>Алма Сарсенбаева — опытный специалист по био‑массажу Fohow. Индивидуальный подход к каждому клиенту.</p>
-</section>
-
+<!-- SERVICES -->
 <section id="services">
-  <h2>Услуги</h2>
-  <ul>
-    <li>Био‑массаж Fohow для здоровья и энергии</li>
-    <li>Расслабление, снятие напряжения, восстановление баланса</li>
-    <li>Подходит взрослым, молодёжи и пожилым</li>
-  </ul>
+<h2>Услуги и акция</h2>
+<div class="card">
+<b>С заботой о старшем поколении</b><br><br>
+
+✨ <b>3 дня — 3 массажа всего за <span class="price">5 000 ₸</span></b><br><br>
+
+✔ 3 лечебных массажа (3 дня подряд)<br>
+✔ Бережная, спокойная работа<br>
+✔ Тёплый травяной чай<br>
+✔ Уютная атмосфера<br>
+✔ Живое общение и внимание<br><br>
+
+📲 Запись по акции:<br>
+<b>+7 707 271 12 21</b><br><br>
+
+<a class="btn btn-whatsapp" href="https://wa.me/87072711221">
+Записаться по акции
+</a>
+</div>
 </section>
 
+<!-- GALLERY -->
 <section id="gallery">
-  <h2>Фото и видео</h2>
-  <div class="gallery-grid">
-    <img src="https://via.placeholder.com/300" alt="Кабинет">
-    <img src="https://via.placeholder.com/300" alt="Процесс массажа">
-    <img src="https://via.placeholder.com/300" alt="Атмосфера процедуры">
-  </div>
+<h2>Фото и видео</h2>
+<div class="grid gallery">
+
+<iframe src="https://rutube.ru/play/embed/b43cd989b54e6f93daadc0759f8ec9ee/"></iframe>
+<img src="https://mirazdrav.ru/templates/yootheme/cache/photo_5334552357947700508_y-29bddcff.jpeg">
+
+<iframe src="https://rutube.ru/play/embed/25545ed4fe86b820225a2a93329910bc/"></iframe>
+<img src="https://world-fenix.ru/ssl/u/d0/4bfcce524811efab668d7432dabdfa/-/874e3714-52d2-4a08-b97d-4605d51db3a0.jpg">
+
+<iframe src="https://rutube.ru/play/embed/a947fe006f9c6c73b6ab667dce8896ea/"></iframe>
+<img src="https://avatars.mds.yandex.net/get-altay/14185024/2a00000193b0c99ecdc6de176f05f56946ad/orig">
+
+</div>
 </section>
 
+<!-- BUSINESS -->
 <section id="business">
-  <h2>Бизнес-возможности Fohow</h2>
-  <ul>
-    <li>Строим бизнес на базе продукции и методик Fohow</li>
-    <li>Возможность стать партнёром, продавать услуги и продукты</li>
-    <li>Дополнительный доход с поддержкой компании</li>
-  </ul>
+<h2>Бизнес-возможности</h2>
+<div class="card">
+Возможность развивать собственный бизнес с поддержкой Fohow.
+</div>
 </section>
 
-<section id="contacts" class="contacts-section">
-  <h2>Свяжитесь с нами / Запись</h2>
-  <p>Нажмите на кнопку ниже для записи:</p>
-  <div class="contact-buttons">
-    <a class="contact-btn whatsapp-btn" href="https://wa.me/77003338541" target="_blank">📩 Записаться в WhatsApp</a>
-    <a class="contact-btn instagram-btn" href="https://instagram.com/fohow__astana?igsh=MWd5NTNremx6bjJjNw%3D%3D&utm_source=qr" target="_blank">📸 Instagram — примеры работ</a>
-  </div>
+<!-- CONTACTS -->
+<section id="contacts">
+<h2>Контакты</h2>
+
+<a class="btn btn-gold" href="https://wa.me/87003338541">
+WhatsApp (основной)
+</a>
+
+<a class="btn btn-whatsapp" href="https://wa.me/87072711221">
+WhatsApp (акция)
+</a>
+
 </section>
 
 <footer>
-  © 2026 Алма Сарсенбаева. Все права защищены.
+© 2026 Алма Сарсенбаева • Fohow
 </footer>
 
 </body>
