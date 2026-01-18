@@ -10,6 +10,7 @@ body {
   font-family: Arial, sans-serif;
   background: #f5f5f5;
   color: #111;
+  scroll-behavior: smooth;
 }
 
 a { text-decoration: none; }
@@ -43,16 +44,12 @@ header p { max-width: 600px; margin: 15px auto; font-size: 18px; color: red; }
   background: #fafafa;
 }
 
-.section {
-  display: none; 
+.section { 
   background: white;
   padding: 20px; 
   border-radius: 14px;
-  opacity: 0; 
-  transition: opacity 0.3s;
+  margin-bottom: 40px;
 }
-.section.show { display: block; opacity: 1; }
-.section.hide { opacity: 0; transition: opacity 0.3s; }
 
 .back { display: inline-block; margin-bottom: 20px; color: #bfa14a; font-weight: bold; cursor: pointer; }
 
@@ -66,15 +63,15 @@ header p { max-width: 600px; margin: 15px auto; font-size: 18px; color: red; }
 .company-image { text-align: center; margin: 15px 0; }
 .company-image img { width: 100%; max-width: 500px; border-radius: 10px; }
 
-.gallery-video, .gallery-img { width: 100%; margin: 10px 0; border-radius: 10px; }
-.gallery-video iframe { width: 100%; height: 315px; border-radius: 10px; }
+.gallery-item { width: 100%; margin: 15px 0; border-radius: 10px; }
+.gallery-item img, .gallery-item iframe { width: 100%; border-radius: 10px; }
 
 @media(max-width:600px){
   header h1 { font-size: 24px; }
   header p { font-size: 16px; }
   .btn { padding: 12px 18px; font-size: 14px; }
   .company-image img { max-width: 100%; }
-  .gallery-video iframe { height: 200px; }
+  .gallery-item iframe { height: 200px; }
 }
 </style>
 </head>
@@ -92,10 +89,10 @@ header p { max-width: 600px; margin: 15px auto; font-size: 18px; color: red; }
 </header>
 
 <div class="main" id="home">
-  <button class="card" onclick="openSection('company')">Про компанию</button>
-  <button class="card" onclick="openSection('services')">Услуги</button>
-  <button class="card" onclick="openSection('gallery')">Фото и видео</button>
-  <button class="card" onclick="openSection('business')">Бизнес‑возможности</button>
+  <a class="card" href="#company">Про компанию</a>
+  <a class="card" href="#services">Услуги</a>
+  <a class="card" href="#gallery">Фото и видео</a>
+  <a class="card" href="#business">Бизнес‑возможности</a>
 
   <div class="contacts">
     <a class="btn wh1" href="https://wa.me/87003338541" target="_blank">WhatsApp</a>
@@ -106,7 +103,6 @@ header p { max-width: 600px; margin: 15px auto; font-size: 18px; color: red; }
 
 <!-- ======= Про компанию ======= -->
 <div class="main section" id="company">
-  <div class="back" onclick="goBack()">← Назад</div>
   <h2>О компании Fohow</h2>
   <p>Fohow — международная компания, которая сочетает традиционную китайскую медицину и современные технологии, создавая натуральные продукты для здоровья и красоты.</p>
 
@@ -117,74 +113,34 @@ header p { max-width: 600px; margin: 15px auto; font-size: 18px; color: red; }
   <h3>Миссия и философия</h3>
   <p>Мы стремимся делать здоровье доступным каждому, используя безопасные и проверенные натуральные компоненты. Наши принципы: натуральность, инновации, качество, гармония тела и духа.</p>
   <div class="company-image"><img src="https://i.ytimg.com/vi/MotIRWPEbbU/maxresdefault.jpg" alt="Миссия и философия" loading="lazy"></div>
-
-  <h3>Продукция</h3>
-  <ul>
-    <li>Биодобавки и витамины</li>
-    <li>Средства для иммунитета</li>
-    <li>Натуральные экстракты и концентраты</li>
-    <li>Уходовые продукты для красоты</li>
-  </ul>
-  <div class="company-image"><img src="https://sun9-26.userapi.com/c849220/v849220455/1b3a7/m-sbX1q9-wE.jpg" alt="Продукция Fohow" loading="lazy"></div>
-
-  <h3>Научные исследования и производство</h3>
-  <p>Компания имеет собственные научно-исследовательские центры и производства с международными сертификатами качества ISO и GMP.</p>
-  <div class="company-image"><img src="https://i.ytimg.com/vi/t_EHWHbNU50/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-DoACuAiKAgwIABABGDUgXShlMA8=&rs=AOn4CLCoUqtLvszMDh6uzUYqARYdP58YGQ" alt="Лаборатория и производство" loading="lazy"></div>
-
-  <h3>Культура здоровья</h3>
-  <p>Философия Fohow основана на трёх шагах: регуляция → очистка → восстановление.</p>
-  <div class="company-image"><img src="https://via.placeholder.com/500x200?text=Регуляция+→+Очистка+→+Восстановление" alt="Культура здоровья" loading="lazy"></div>
 </div>
 
 <!-- ======= Услуги ======= -->
 <div class="main section" id="services">
-  <div class="back" onclick="goBack()">← Назад</div>
   <h2>Услуги</h2>
   <p>3 массажа за 5 000 ₸ для пенсионеров. Забота, тепло, внимание и восстановление.</p>
 </div>
 
-<!-- ======= Галерея (видео и фото) ======= -->
+<!-- ======= Галерея (фото и видео чередуются) ======= -->
 <div class="main section" id="gallery">
-  <div class="back" onclick="goBack()">← Назад</div>
   <h2>Фото и видео</h2>
 
-  <div class="gallery-video">
-    <iframe src="https://rutube.ru/play/embed/3376eb8379982a5d4e5a6b91b1d4f57a/" frameborder="0" allowfullscreen loading="lazy"></iframe>
-  </div>
-  <div class="gallery-video">
-    <iframe src="https://rutube.ru/play/embed/c91f1adba6ef3c1da6254d309bfe2f90/" frameborder="0" allowfullscreen loading="lazy"></iframe>
-  </div>
-
-  <div class="gallery-img"><img src="https://avatars.mds.yandex.net/get-altay/11873493/2a00000192e41aa34901c8ee8890e2c1879d/orig" alt="Фото 1" loading="lazy"></div>
-  <div class="gallery-img"><img src="https://avatars.mds.yandex.net/get-altay/11873493/2a00000192e41aa34901c8ee8890e2c1879d/orig" alt="Фото 2" loading="lazy"></div>
+  <div class="gallery-item"><img src="https://avatars.mds.yandex.net/get-altay/4699294/2a0000017b7ccf95dd1610f534a0a7a21b08/XXL_height" alt="Фото 1" loading="lazy"></div>
+  <div class="gallery-item"><iframe src="https://rutube.ru/video/d24bb55a2aa3c75f203d6407c242af42/" frameborder="0" allowfullscreen loading="lazy"></iframe></div>
+  
+  <div class="gallery-item"><img src="https://avatars.mds.yandex.net/get-altay/10953738/2a0000018a1971ea07aa71ab6d3f7667d0a3/XXL_height" alt="Фото 2" loading="lazy"></div>
+  <div class="gallery-item"><iframe src="https://rutube.ru/video/7814f896ecfb299468f8f279335dd574/" frameborder="0" allowfullscreen loading="lazy"></iframe></div>
+  
+  <div class="gallery-item"><img src="https://static.tildacdn.com/tild3732-3035-4163-b563-653034653033/1.png" alt="Фото 3" loading="lazy"></div>
+  <div class="gallery-item"><img src="https://avatars.mds.yandex.net/get-altay/11471993/2a00000190aef173b84f4d02eb34ccb87c23/XXL_height" alt="Фото 4" loading="lazy"></div>
+  <div class="gallery-item"><img src="https://frankfurt.apollo.olxcdn.com/v1/files/tpzr1rzubpak2-KZ/image" alt="Фото 5" loading="lazy"></div>
 </div>
 
 <!-- ======= Бизнес ======= -->
 <div class="main section" id="business">
-  <div class="back" onclick="goBack()">← Назад</div>
   <h2>Бизнес с Fohow</h2>
   <p>Возможность строить доход с поддержкой компании.</p>
 </div>
-
-<script>
-function openSection(id){
-  document.getElementById("home").style.display="none";
-  document.querySelectorAll(".section").forEach(s => {
-    s.classList.remove("show","hide");
-  });
-  const section = document.getElementById(id);
-  section.style.display = "block";
-  setTimeout(()=> section.classList.add("show"), 50);
-}
-
-function goBack(){
-  document.querySelectorAll(".section").forEach(s => s.classList.add("hide"));
-  setTimeout(() => {
-    document.querySelectorAll(".section").forEach(s => s.style.display = "none");
-    document.getElementById("home").style.display = "block";
-  }, 300);
-}
-</script>
 
 </body>
 </html>
