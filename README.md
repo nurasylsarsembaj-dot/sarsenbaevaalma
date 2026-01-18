@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -17,24 +18,57 @@ a {
 }
 
 header {
-  background:#111 url("https://www.joyoflife.ee/media/joy-of-life/Tooted/Fohow/Fohow%20base.png") center/cover no-repeat;
+  position: relative;
+  background: url("https://www.joyoflife.ee/media/joy-of-life/Tooted/Fohow/Fohow%20base.png") center/cover no-repeat;
   color: white;
   text-align: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background: rgba(0,0,0,0.5);
   padding: 40px 20px;
+  border-radius: 15px;
+  max-width: 900px;
 }
 
 header h1 {
-  margin: 0;
-  font-size: 28px;
+  font-size: 42px;
+  margin: 0 0 20px 0;
 }
 
-header p {
-  max-width: 600px;
-  margin: 15px auto;
+.name-highlight {
+  color: #bfa14a;
+  font-weight: bold;
+}
+
+.hero-subtitle {
   font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
-/* ======= Главная секция ======= */
+.hero-buttons .btn {
+  margin: 10px;
+  padding: 14px 22px;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: transform 0.2s;
+  color: white;
+}
+
+.hero-buttons .btn:hover {
+  transform: scale(1.05);
+}
+
+.wh1 { background: #25D366; }
+.wh2 { background: #1ebe5d; }
+.inst { background: #c13584; }
+
+/* ======= Главная карточки ======= */
 .main {
   max-width: 900px;
   margin: auto;
@@ -70,29 +104,6 @@ header p {
   opacity: 1;
 }
 
-/* ======= Кнопки ======= */
-.contacts {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.btn {
-  display: inline-block;
-  margin: 10px;
-  padding: 14px 22px;
-  border-radius: 30px;
-  font-weight: bold;
-  color: white;
-  transition: transform 0.2s;
-}
-.btn:hover {
-  transform: scale(1.05);
-}
-
-.wh1 { background: #25D366; }
-.wh2 { background: #1ebe5d; }
-.inst { background: #c13584; }
-
 /* ======= Кнопка назад ======= */
 .back {
   display: inline-block;
@@ -127,32 +138,40 @@ header p {
 
 /* ======= Адаптив ======= */
 @media(max-width:600px){
-  header h1 { font-size: 24px; }
-  header p { font-size: 16px; }
-  .btn { padding: 12px 18px; font-size: 14px; }
+  header h1 { font-size: 28px; }
+  .hero-subtitle { font-size: 16px; }
+  .hero-buttons .btn { padding: 12px 18px; font-size: 14px; }
   .company-image img { max-width: 100%; }
 }
 </style>
 </head>
 <body>
 
+<!-- ======= Главный экран ======= -->
 <header>
-  <h1>Алма Сарсенбаева</h1>
-  <p>Специалист по био-массажу Fohow</p>
+  <div class="hero-overlay">
+    <h1><span class="name-highlight">Алма Сарсенбаева</span></h1>
+    <p class="hero-subtitle">
+      Добро пожаловать!<br>
+      Рады видеть вас на нашем сайте!<br>
+      Меня зовут Алма Сарсенбаева, и вместе с моей дочерью мы являемся профессиональными массажистами компании Fohow.<br>
+      Здесь вы можете узнать больше о нас, о нашей компании и об услугах, которые мы с любовью предоставляем нашим клиентам.<br>
+      Мы будем рады помочь вам заботиться о здоровье и гармонии вашего тела.
+    </p>
+    <div class="hero-buttons">
+      <a class="btn wh1" href="https://wa.me/87003338541" target="_blank">WhatsApp</a>
+      <a class="btn wh2" href="https://wa.me/87072711221" target="_blank">WhatsApp 2</a>
+      <a class="btn inst" href="https://instagram.com/" target="_blank">Instagram</a>
+    </div>
+  </div>
 </header>
 
-<!-- ======= Главная секция ======= -->
+<!-- ======= Главная карточки ======= -->
 <div class="main" id="home">
   <div class="card" onclick="openSection('company')">Про компанию</div>
   <div class="card" onclick="openSection('services')">Услуги</div>
   <div class="card" onclick="openSection('gallery')">Фото и видео</div>
   <div class="card" onclick="openSection('business')">Бизнес-возможности</div>
-
-  <div class="contacts">
-    <a class="btn wh1" href="https://wa.me/87003338541" target="_blank">WhatsApp</a>
-    <a class="btn wh2" href="https://wa.me/87072711221" target="_blank">WhatsApp 2</a>
-    <a class="btn inst" href="https://instagram.com/" target="_blank">Instagram</a>
-  </div>
 </div>
 
 <!-- ======= Секция: Про компанию ======= -->
@@ -249,7 +268,6 @@ function goBack(){
   }, 300);
 }
 
-// Функция увеличения изображения в галерее
 function zoomImage(img){
   const overlay = document.createElement("div");
   overlay.style.position = "fixed";
